@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import Timer from "../components/Timer";
+import Button from "../UI/Button";
 
 export default function Home() {
   return (
@@ -8,6 +10,9 @@ export default function Home() {
       <Title>Coming Soon</Title>
       <SubTitle>Our website is under construction</SubTitle>
       <Timer />
+      <Link to="explore" className="btn outline">
+        Explore more
+      </Link>
     </Container>
   );
 }
