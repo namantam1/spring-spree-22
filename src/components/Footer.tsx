@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <Container>
       <SiteLinks>
-        <h1>Site Links</h1>
+        <h2>Site Links</h2>
         <div>
           <ul>
             <li>
@@ -51,14 +51,21 @@ export default function Footer() {
           </ul>
         </div>
       </SiteLinks>
-      <hr />
+      <Copyright>
+        <div className="small">Copyright &copy; Spring Spree 2022</div>
+        <div>
+          <Link to="privacy_policy">Privacy Policy</Link>
+          {" | "}
+          <Link to="terms-conditons">Terms &amp; Conditions</Link>
+        </div>
+      </Copyright>
     </Container>
   );
 }
 
 const Container = styled.footer`
   padding: 20px 50px;
-  height: 200px;
+  min-height: 200px;
   background-color: ${({ theme }) => theme.main};
   color: white;
 `;
@@ -72,8 +79,27 @@ const SiteLinks = styled.div`
     display: flex;
 
     ul {
+      margin-top: 10px;
       flex: 0 0 33%;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+`;
+
+const Copyright = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-top: 20px;
+
+  border-top: 1px solid white;
+
+  .small {
+    color: grey;
   }
 
   a {

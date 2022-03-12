@@ -20,7 +20,7 @@ export default function Card() {
 
 const Container = styled.div`
   padding: 10px;
-  height: 300px;
+  height: 280px;
   /* max-width: 400px; */
   width: 100%;
   border-radius: 10px;

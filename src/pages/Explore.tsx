@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const Main = styled.section`
   margin: 10px;
-  padding: 30px 0;
+  padding: 30px 10px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
