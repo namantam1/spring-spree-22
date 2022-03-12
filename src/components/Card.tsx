@@ -48,4 +48,10 @@ const Title = styled.h1`
 const Description = styled.div`
   color: white;
   margin-bottom: 20px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 `;

@@ -31,7 +31,7 @@ const Main = styled.section`
   padding: 30px 10px;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 1250px;
   margin: auto;
 `;

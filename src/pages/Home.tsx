@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 
 import Timer from "../components/Timer";
+import { useState } from "react";
 
 export default function Home() {
+  const [mute, setMute] = useState(true);
+
+  const toggleMute = () => setMute(!mute);
+
   return (
     <Container>
-      <Video autoPlay loop muted>
+      <Volume>
+        {mute ? (
+          <MdVolumeOff size={20} color="#ddd" onClick={toggleMute} />
+        ) : (
+          <MdVolumeUp size={20} color="#ddd" onClick={toggleMute} />
+        )}
+      </Volume>
+      <Video autoPlay loop muted={mute}>
         <source src="/assets/videos/cover.m4v" />
       </Video>
       <Title>Coming Soon</Title>
@@ -26,6 +39,14 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const Volume = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
 `;
 
 const Video = styled.video`
