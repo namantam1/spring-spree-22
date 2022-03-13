@@ -45,6 +45,18 @@ const Right = styled.ul`
 
 const NavLink = styled(Link)`
   text-decoration: none;
-  color: white;
+  color: #e1e1e1;
   font-size: 1.2rem;
+
+  &:hover {
+    color: #efffff;
+    border-bottom: 2px solid #efefef;
+  }
+
+  /* &:hover::after {
+    content: "";
+    width: 100%;
+    height: 10px;
+    background-color: white;
+  } */
 `;

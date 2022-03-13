@@ -68,6 +68,10 @@ const Container = styled.footer`
   min-height: 200px;
   background-color: ${({ theme }) => theme.main};
   color: white;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const SiteLinks = styled.div`
@@ -100,6 +104,7 @@ const Copyright = styled.div`
 
   .small {
     color: grey;
+    font-size: 0.8rem;
   }
 
   a {

@@ -22,12 +22,14 @@ export default function Home() {
       <Video autoPlay loop muted={mute}>
         <source src="/assets/videos/cover.m4v" />
       </Video>
+
+      <SpreeLogo src="/assets/images/logo-big.webp" alt="spree-logo" />
       <Title>Coming Soon</Title>
-      <SubTitle>Our website is under construction</SubTitle>
+      <SubTitle>April 8, 2022</SubTitle>
       <Timer />
-      <Link to="explore" className="btn outline">
+      {/* <Link to="#" className="btn outline">
         Explore more
-      </Link>
+      </Link> */}
     </Container>
   );
 }
@@ -59,6 +61,15 @@ const Video = styled.video`
   z-index: -1;
 `;
 
+const SpreeLogo = styled.img`
+  width: 250px;
+  margin-bottom: 20px;
+
+  @media only screen and (min-device-width: 480px) {
+    width: 400px;
+  }
+`;
+
 const Title = styled.h1`
   text-align: center;
   line-height: 3.5rem;
@@ -66,14 +77,14 @@ const Title = styled.h1`
   font-weight: 800;
   text-transform: uppercase;
   margin: 0;
-  color: white;
-  text-shadow: 1px 1px 5px white;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 3px #fff;
 `;
 
 const SubTitle = styled.h2`
   text-align: center;
   margin: 0;
-  color: white;
-  font-size: 2rem;
-  font-weight: 100;
+  color: #d6d6d6;
+  font-size: 1.5rem;
+  font-weight: 400;
 `;

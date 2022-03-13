@@ -4,7 +4,7 @@ import { useTimer } from "../utils/hooks/timer";
 import TimerBox from "./TimerBox";
 
 export default function Timer() {
-  const { days, hours, minutes, seconds } = useTimer();
+  const { days, hours, minutes, seconds } = useTimer("Apr 8, 2022");
 
   return (
     <Container>
