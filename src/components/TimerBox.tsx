@@ -18,7 +18,7 @@ export default function TimerBox({
 const Container = styled.div`
   width: 90px;
   height: 90px;
-  margin: 0 27px 30px;
+  margin: 0 20px 30px;
   padding: 10px 20px;
   border-radius: 10px;
   backdrop-filter: blur(10px);

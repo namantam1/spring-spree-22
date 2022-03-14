@@ -11,7 +11,7 @@ export default function Home() {
   const toggleMute = () => setMute(!mute);
 
   return (
-    <Container>
+    <div>
       <Volume>
         {mute ? (
           <MdVolumeOff size={20} color="#ddd" onClick={toggleMute} />
@@ -22,20 +22,66 @@ export default function Home() {
       <Video autoPlay loop muted={mute}>
         <source src="/assets/videos/cover.m4v" />
       </Video>
+      <Container>
+        <Wrapper>
+          <SpreeLogo src="/assets/images/logo-big.webp" alt="spree-logo" />
+          <MainTitle>Coming Soon</MainTitle>
+          <SubTitle>April 8-10, 2022</SubTitle>
+          <Timer />
+          {/* <Link to="#" className="btn outline">
+            Explore more
+          </Link> */}
+        </Wrapper>
 
-      <SpreeLogo src="/assets/images/logo-big.webp" alt="spree-logo" />
-      <Title>Coming Soon</Title>
-      <SubTitle>April 8, 2022</SubTitle>
-      <Timer />
-      {/* <Link to="#" className="btn outline">
-        Explore more
-      </Link> */}
-    </Container>
+        <Wrapper>
+          <Title>About</Title>
+          <AboutText>
+            SpringSpree, conceived in 1978 and now coming to it's 35th edition,
+            is NIT Warangal's cultural fest. It is one of the biggest fests in
+            the country, with a far-reaching impact on students all over the
+            nation.
+          </AboutText>
+          <AboutText>
+            With a plethora of thrilling events, from Idol, Director's Cut,
+            Choreo Night, etc... and several new activities as well, SpringSpree
+            is back in 2022 after a two year hiatus! A festival well worth your
+            time, we are ready to bring you entertainment and excitement like
+            never before.
+          </AboutText>
+        </Wrapper>
+
+        <Wrapper>
+          <Title>Links</Title>
+          <LinkContainer>
+            <div>
+              <strong>Spring spree trailer:</strong>
+            </div>
+            <div>
+              <a
+                href="https://www.youtube.com/watch?v=RaSRQDaoARY"
+                target="_blank"
+              >
+                Click here
+              </a>
+            </div>
+          </LinkContainer>
+        </Wrapper>
+      </Container>
+    </div>
   );
 }
 
 const Container = styled.div`
   height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  background-color: #000000a1;
+`;
+
+const Wrapper = styled.div`
+  scroll-snap-align: start;
+  padding: 0 10px;
+  height: 100%;
   background-color: #000000a1;
   display: flex;
   flex-direction: column;
@@ -70,7 +116,7 @@ const SpreeLogo = styled.img`
   }
 `;
 
-const Title = styled.h1`
+const MainTitle = styled.h1`
   text-align: center;
   line-height: 3.5rem;
   font-size: 3.5rem;
@@ -87,4 +133,42 @@ const SubTitle = styled.h2`
   color: #d6d6d6;
   font-size: 1.5rem;
   font-weight: 400;
+`;
+
+const Title = styled.h1`
+  border-bottom: 2px solid;
+  font-size: 2.5rem;
+  color: white;
+`;
+
+const AboutText = styled.p`
+  text-align: justify;
+  font-size: 1rem;
+  color: white;
+  max-width: 600px;
+  margin-top: 10px;
+
+  @media only screen and (min-device-width: 480px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const LinkContainer = styled.div`
+  margin-top: 30px;
+  align-items: center;
+  display: flex;
+  color: white;
+
+  div {
+    padding: 0 5px;
+  }
+
+  strong {
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: #2196f3;
+    text-decoration: none;
+  }
 `;
