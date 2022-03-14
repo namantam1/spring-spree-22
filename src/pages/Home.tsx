@@ -1,9 +1,26 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
+import {
+  AiOutlineFacebook,
+  AiOutlineTwitter,
+  AiOutlineYoutube,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 
 import Timer from "../components/Timer";
 import { useState } from "react";
+import {
+  AboutText,
+  Container,
+  LinkContainer,
+  MainTitle,
+  SocialMedia,
+  SpreeLogo,
+  SubTitle,
+  Title,
+  Video,
+  Volume,
+  Wrapper,
+} from "./Home.style";
 
 export default function Home() {
   const [mute, setMute] = useState(true);
@@ -51,7 +68,30 @@ export default function Home() {
         </Wrapper>
 
         <Wrapper>
-          <Title>Links</Title>
+          {/* <Title>Links</Title> */}
+          <SocialMedia>
+            <a
+              href="https://www.instagram.com/springspree.nitw/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineInstagram />
+            </a>
+            <a
+              href="https://www.facebook.com/nitw.springspree/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineFacebook />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCx7ki19SMkESQPkF_erbPvA/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineYoutube />
+            </a>
+          </SocialMedia>
           <LinkContainer>
             <div>
               <strong>Spring spree trailer:</strong>
@@ -60,6 +100,7 @@ export default function Home() {
               <a
                 href="https://www.youtube.com/watch?v=RaSRQDaoARY"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Click here
               </a>
@@ -70,105 +111,3 @@ export default function Home() {
     </div>
   );
 }
-
-const Container = styled.div`
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  background-color: #000000a1;
-`;
-
-const Wrapper = styled.div`
-  scroll-snap-align: start;
-  padding: 0 10px;
-  height: 100%;
-  background-color: #000000a1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Volume = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-  cursor: pointer;
-`;
-
-const Video = styled.video`
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-`;
-
-const SpreeLogo = styled.img`
-  width: 250px;
-  margin-bottom: 20px;
-
-  @media only screen and (min-device-width: 480px) {
-    width: 400px;
-  }
-`;
-
-const MainTitle = styled.h1`
-  text-align: center;
-  line-height: 3.5rem;
-  font-size: 3.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 0;
-  color: #f5f5f5;
-  text-shadow: 1px 1px 3px #fff;
-`;
-
-const SubTitle = styled.h2`
-  text-align: center;
-  margin: 0;
-  color: #d6d6d6;
-  font-size: 1.5rem;
-  font-weight: 400;
-`;
-
-const Title = styled.h1`
-  border-bottom: 2px solid;
-  font-size: 2.5rem;
-  color: white;
-`;
-
-const AboutText = styled.p`
-  text-align: justify;
-  font-size: 1rem;
-  color: white;
-  max-width: 600px;
-  margin-top: 10px;
-
-  @media only screen and (min-device-width: 480px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const LinkContainer = styled.div`
-  margin-top: 30px;
-  align-items: center;
-  display: flex;
-  color: white;
-
-  div {
-    padding: 0 5px;
-  }
-
-  strong {
-    font-size: 1.2rem;
-  }
-
-  a {
-    color: #2196f3;
-    text-decoration: none;
-  }
-`;
