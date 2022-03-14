@@ -15,7 +15,6 @@ import {
   SubTitle,
   Title,
   Video,
-  Volume,
   Wrapper,
   YoutubeVideo,
 } from "./Home.style";

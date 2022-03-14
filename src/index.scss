@@ -51,25 +51,27 @@ small {
   font-size: 0.8rem;
 }
 
-// scroll bar
-/* width */
-::-webkit-scrollbar {
-  width: 7px;
-}
+@media only screen and (min-device-width: 600px) {
+  // scroll bar
+  /* width */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgb(68, 68, 68);
-  border-radius: 10px;
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(68, 68, 68);
+    border-radius: 10px;
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(44, 44, 44);
-  border-radius: 10px;
-}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(44, 44, 44);
+    border-radius: 10px;
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #444444;
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+  }
 }
