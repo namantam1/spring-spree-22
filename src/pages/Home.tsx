@@ -1,17 +1,14 @@
-import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 import {
   AiOutlineFacebook,
-  AiOutlineTwitter,
   AiOutlineYoutube,
   AiOutlineInstagram,
 } from "react-icons/ai";
 
 import Timer from "../components/Timer";
-import { useState } from "react";
 import {
   AboutText,
   Container,
-  LinkContainer,
+  Divider,
   MainTitle,
   SocialMedia,
   SpreeLogo,
@@ -20,23 +17,13 @@ import {
   Video,
   Volume,
   Wrapper,
+  YoutubeVideo,
 } from "./Home.style";
 
 export default function Home() {
-  const [mute, setMute] = useState(true);
-
-  const toggleMute = () => setMute(!mute);
-
   return (
     <div>
-      <Volume>
-        {mute ? (
-          <MdVolumeOff size={20} color="#ddd" onClick={toggleMute} />
-        ) : (
-          <MdVolumeUp size={20} color="#ddd" onClick={toggleMute} />
-        )}
-      </Volume>
-      <Video autoPlay loop muted={mute}>
+      <Video autoPlay loop muted>
         <source src="/assets/videos/cover.m4v" />
       </Video>
       <Container>
@@ -44,14 +31,14 @@ export default function Home() {
           <SpreeLogo src="/assets/images/logo-big.webp" alt="spree-logo" />
           <MainTitle>Coming Soon</MainTitle>
           <SubTitle>April 8-10, 2022</SubTitle>
+          <Divider />
           <Timer />
           {/* <Link to="#" className="btn outline">
             Explore more
           </Link> */}
         </Wrapper>
-
-        <Wrapper>
-          <Title>About</Title>
+        <Wrapper className="one">
+          <Title underlined>About</Title>
           <AboutText>
             SpringSpree, conceived in 1978 and now coming to it's 35th edition,
             is NIT Warangal's cultural fest. It is one of the biggest fests in
@@ -67,7 +54,23 @@ export default function Home() {
           </AboutText>
         </Wrapper>
 
-        <Wrapper>
+        <Wrapper className="two">
+          <Title>Official Trailer</Title>
+          <YoutubeVideo>
+            <iframe
+              // style={{ maxWidth: "90%" }}
+              // height="100%"
+              width="100%"
+              // width="560"
+              // height="315"
+              src="https://www.youtube.com/embed/RaSRQDaoARY?controls=0"
+              title="Spring spree 22 - Official trailer"
+              frameBorder="1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              // allowFullScreen
+            ></iframe>
+          </YoutubeVideo>
+
           {/* <Title>Links</Title> */}
           <SocialMedia>
             <a
@@ -92,20 +95,7 @@ export default function Home() {
               <AiOutlineYoutube />
             </a>
           </SocialMedia>
-          <LinkContainer>
-            <div>
-              <strong>Spring spree trailer:</strong>
-            </div>
-            <div>
-              <a
-                href="https://www.youtube.com/watch?v=RaSRQDaoARY"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Click here
-              </a>
-            </div>
-          </LinkContainer>
+          <small>Copyright &copy; Spring Spree 2022</small>
         </Wrapper>
       </Container>
     </div>

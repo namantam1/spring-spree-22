@@ -10,12 +10,25 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   scroll-snap-align: start;
   padding: 0 10px;
-  height: 100%;
+  height: 100vh;
   background-color: #000000a1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &.one {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(/assets/images/bg_img3.jpg);
+    background-size: cover;
+  }
+
+  &.two {
+    background-color: black;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(/assets/images/bg_img2.jpg);
+    background-size: cover; */
+  }
 `;
 
 export const Volume = styled.div`
@@ -28,7 +41,7 @@ export const Volume = styled.div`
 
 export const Video = styled.video`
   object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -57,28 +70,42 @@ export const MainTitle = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
+  margin-top: 10px;
   text-align: center;
-  margin: 0;
   color: #d6d6d6;
   font-size: 1.5rem;
   font-weight: 400;
+  /* font-family: "Arima Madurai", cursive; */
+  font-family: "Dancing Script", cursive;
+  /* font-family: 'Sacramento', cursive; */
+  /* font-family: 'Sansita Swashed', cursive; */
+`;
+
+export const Divider = styled.div`
+  border-top: 1px solid #5f5f5fa6;
+  width: 127px;
+  margin-top: 10px;
 `;
 
 export const Title = styled.h1`
-  border-bottom: 2px solid;
-  font-size: 2.5rem;
+  ${({ underlined }: { underlined?: boolean }) =>
+    underlined && "border-bottom: 2px solid;"}
+  font-size: 2.2rem;
   color: white;
 `;
 
 export const AboutText = styled.p`
   text-align: justify;
   font-size: 1rem;
-  color: white;
-  max-width: 600px;
+  color: #e4e4e4;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-top: 10px;
 
   @media only screen and (min-device-width: 480px) {
     font-size: 1.5rem;
+    max-width: 600px;
   }
 `;
 
@@ -94,6 +121,7 @@ export const SocialMedia = styled.div`
   }
 
   svg:hover {
+    background-color: #00000057;
     color: #dedede;
     transform: scale(1.1);
   }
@@ -116,5 +144,16 @@ export const LinkContainer = styled.div`
     color: #2196f3;
     font-size: 1.2rem;
     text-decoration: none;
+  }
+`;
+
+export const YoutubeVideo = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+
+  @media only screen and (min-device-width: 600px) {
+    width: 600px;
+    height: 350px;
   }
 `;

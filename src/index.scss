@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Dancing+Script&family=Sacramento&family=Sansita+Swashed&display=swap");
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -42,6 +44,11 @@ code {
   &.outline {
     border: 2px solid white;
   }
+}
+
+small {
+  color: gray;
+  font-size: 0.8rem;
 }
 
 // scroll bar
