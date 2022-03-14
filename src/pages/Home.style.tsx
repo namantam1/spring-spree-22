@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 
   &.one {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(/assets/images/bg_img3.jpg);
+      url(/assets/images/bg_img3.jpg) fixed;
     background-size: cover;
   }
 
