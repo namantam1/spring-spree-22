@@ -1,8 +1,4 @@
-import {
-  AiOutlineFacebook,
-  AiOutlineYoutube,
-  AiOutlineInstagram,
-} from "react-icons/ai";
+import Footer from "../components/Footer";
 
 import Timer from "../components/Timer";
 import {
@@ -10,7 +6,6 @@ import {
   Container,
   Divider,
   MainTitle,
-  SocialMedia,
   SpreeLogo,
   SubTitle,
   Title,
@@ -18,6 +13,8 @@ import {
   Wrapper,
   YoutubeVideo,
 } from "./Home.style";
+
+const isMobile = screen.width < 900;
 
 export default function Home() {
   return (
@@ -57,45 +54,20 @@ export default function Home() {
           <Title>Official Trailer</Title>
           <YoutubeVideo>
             <iframe
-              // style={{ maxWidth: "90%" }}
-              // height="100%"
               width="100%"
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/RaSRQDaoARY?controls=0"
               title="Spring spree 22 - Official trailer"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              // allowFullScreen
             ></iframe>
           </YoutubeVideo>
-
-          {/* <Title>Links</Title> */}
-          <SocialMedia>
-            <a
-              href="https://www.instagram.com/springspree.nitw/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineInstagram />
-            </a>
-            <a
-              href="https://www.facebook.com/nitw.springspree/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineFacebook />
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCx7ki19SMkESQPkF_erbPvA/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineYoutube />
-            </a>
-          </SocialMedia>
-          <small>Copyright &copy; Spring Spree 2022</small>
+          {!isMobile && <Footer />}
         </Wrapper>
+        {isMobile && (
+          <Wrapper className="two">
+            <Footer />
+          </Wrapper>
+        )}
       </Container>
     </div>
   );

@@ -1,114 +1,90 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Container } from "./Footer.style";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <Container>
-      <SiteLinks>
-        <h2>Site Links</h2>
-        <div>
-          <ul>
-            <li>
-              <Link to="#">Contact Us</Link>
-            </li>
-            <li>
-              <Link to="#">About Us</Link>
-            </li>
-            <li>
-              <Link to="#">Directions</Link>
-            </li>
-            <li>
-              <Link to="#">Blog</Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="#">Promotions</Link>
-            </li>
-            <li>
-              <Link to="#">Partners</Link>
-            </li>
-            <li>
-              <Link to="#">FAQs</Link>
-            </li>
-            <li>
-              <Link to="#">Career</Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="#">Events</Link>
-            </li>
-            <li>
-              <Link to="#">Calender</Link>
-            </li>
-            <li>
-              <Link to="#">Media</Link>
-            </li>
-            <li>
-              <Link to="#">Sponsers</Link>
-            </li>
-          </ul>
+    <>
+      <Container>
+        <div className="main-content">
+          <div className="left box">
+            <div className="content">
+              <img
+                src="./assets/images/updated_logo.webp"
+                alt="spree-logo"
+                className="footer-logo"
+              />
+            </div>
+          </div>
+          <div className="center box" data-scroll>
+            <h2>Links</h2>
+            <div className="content-with-underline">
+              <div>
+                <span className="text">
+                  <a href="#">Home</a>
+                </span>
+              </div>
+              <div>
+                <span className="text">
+                  <a href="#about">About</a>
+                </span>
+              </div>
+              <div>
+                <span className="url">
+                  <a href="https://www.youtube.com/watch?v=RaSRQDaoARY">
+                    Trailer
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="right box" data-scroll id="contact">
+            <h2>Let's Connect</h2>
+            <div className="content-with-underline">
+              <div className="content">
+                <div className="place">
+                  <span className="fas fa-map-marker-alt" />
+                  <span className="text">
+                    {" "}
+                    <a href="https://nitw.ac.in">
+                      National Institute of Technology Campus ,<br />
+                      fathimanagar, Telangana 506004
+                    </a>
+                  </span>
+                </div>
+                <div className="phone">
+                  <span className="fas fa-phone-alt" />
+                  <span className="text">
+                    <a href="tel:0870 245 9191">0870 245 9191</a>
+                  </span>
+                </div>
+                <div className="page">
+                  <span className="fas fa-home" />
+                  <span className="text">
+                    <a href="https://www.nitw.ac.in">https://www.nitw.ac.in</a>
+                  </span>
+                </div>
+              </div>
+              <div className="social">
+                <a href="https://www.facebook.com/nitw.springspree">
+                  <FaFacebook />
+                </a>
+                <a href="https://www.instagram.com/springspree_nitw/">
+                  <FaInstagram />
+                </a>
+                <a href="https://www.youtube.com/watch?v=RaSRQDaoARY">
+                  <FaYoutube />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </SiteLinks>
-      <Copyright>
-        <div className="small">Copyright &copy; Spring Spree 2022</div>
-        <div>
-          <Link to="privacy_policy">Privacy Policy</Link>
-          {" | "}
-          <Link to="terms-conditons">Terms &amp; Conditions</Link>
+        <div className="bottom">
+          <small>
+            Created By Springspree'22 WebDev Team | &copy; 2022 All rights
+            reserved
+          </small>
         </div>
-      </Copyright>
-    </Container>
+      </Container>
+    </>
   );
 }
-
-const Container = styled.footer`
-  padding: 20px 50px;
-  min-height: 200px;
-  background-color: ${({ theme }) => theme.main};
-  color: white;
-
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
-`;
-
-const SiteLinks = styled.div`
-  h1 {
-  }
-
-  div {
-    max-width: 800px;
-    display: flex;
-
-    ul {
-      margin-top: 10px;
-      flex: 0 0 33%;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-`;
-
-const Copyright = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  margin-top: 20px;
-
-  border-top: 1px solid white;
-
-  .small {
-    color: grey;
-    font-size: 0.8rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-`;
